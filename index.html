@@ -1,12 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my GitHub Page</title>
+    <title>Farmse988 Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my GitHub Pages site.</p>
+    <!-- Header with navigation links and name -->
+    <header>
+        <div class="container">
+            <h1>Farmse988</h1>
+            <nav>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="repos.html">Repos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search...">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section for About -->
+    <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <p>Here is some information about me and my work.</p>
+    </section>
+
+    <!-- Section for Blog -->
+    <section id="blog" class="content-section">
+        <h2>My Blog</h2>
+        <p>Read my latest blog posts about coding and projects.</p>
+    </section>
+
+    <!-- Section for Repos -->
+    <section id="repos" class="content-section">
+        <h2>My Repositories</h2>
+        <p>Here are some of my GitHub projects.</p>
+    </section>
+
+    <!-- Section for Contact -->
+    <section id="contact" class="content-section">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out via email.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Farmse988 - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Optional JavaScript for the search button functionality
+        document.querySelector('button').addEventListener('click', function() {
+            const searchQuery = document.getElementById('search').value;
+            alert('Searching for: ' + searchQuery); // Replace with actual search logic
+        });
+    </script>
 </body>
 </html>
