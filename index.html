@@ -1,107 +1,133 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="dark-mode">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willkommen - Farmse988</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #77aaff, #0056b3);
-            color: #fff;
-            text-align: center;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 50px 0;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
-            border-bottom: #77aaff 3px solid;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        nav ul {
-            padding: 0;
-            list-style: none;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-        .welcome-section {
-            padding: 100px 0;
-        }
-        .welcome-section h2 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        .welcome-section p {
-            font-size: 1.5em;
-            margin-bottom: 40px;
-        }
-        .button {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            color: #fff;
-            background: #0056b3;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background: #003d80;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Farmse988 bietet datengetriebene Lösungen für die Landwirtschaft in Österreich. Sebastian Wieser spezialisiert sich auf Bodenanalysen, nachhaltigen Pflanzenbau und agrarwissenschaftliche Datenmodelle." />
+<meta name="keywords" content="Landwirtschaft, Datenanalyse, Bodenanalyse, Nachhaltigkeit, Agrarwissenschaften, Datenlösungen, Österreich, Austria, Sebastian Wieser, regenerative Landwirtschaft, Quarto, INVEKOS, R Packages" />
+<meta name="author" content="Sebastian Wieser, Farmse988 Team" />
+
+  <title>farmse988 – Landwirtschaft Datenlösungen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style_index.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 <body>
-    <!-- Header mit Navigation -->
-    <header>
-        <div class="container">
-            <h1>Farmse988</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="repos.html">Repos</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="logo">farmse988</div>
+    <nav>
+      <ul>
+        <li><a href="pages/about.html">Über mich</a></li>
+        <li><a href="pages/services.html">Portfolio</a></li>
+        <li><a href="pages/repositories.html">Repositories</a></li>
+        <li><a href="pages/publications.html">Publikationen</a></li>
+        <li><a href="pages/contact.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Willkommensbereich -->
-    <section class="welcome-section">
-        <div class="container">
-            <h2>Willkommen bei Farmse988</h2>
-            <p>Entdecke meine Projekte und Repositories auf GitHub.</p>
-            <a href="repos.html" class="button">Zu meinen Repositories</a>
-        </div>
-    </section>
+  <main>
+    <div class="intro-text">
+      <h1>Landwirtschaftliche Datenlösungen 4.0<br># Boden<br># Pflanzenbau</h1>
+      <p>Intelligente Analyse, nachhaltige Landwirtschaft und datenbasierte Entscheidungen für eine bessere Zukunft.</p>
+    </div>
+    <div class="hero-image">
+      <img src="images/hero.jpg" alt="Symbolgrafik" />
+    </div>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Farmse988 - All Rights Reserved</p>
-    </footer>
+<section class="tech-logos">
+  <div class="tech-header">
+  <h2>Mit Tech-Stacks in die Zukunft</h2>
+<p>Modernste Tools und Frameworks für datengetriebene Landwirtschaft und nachhaltige Innovation.</p>
+  
+  </div>
+  <div class="logos-slider">
+    <div class="logos-track">
+      <a href="https://leafletjs.com/" target="_blank" rel="noopener">
+        <img src="images/logos/leaflet.svg" alt="Leaflet" />
+      </a>
+      <a href="https://cran.r-project.org/web/packages/tmap/index.html" target="_blank" rel="noopener">
+        <img src="images/logos/tmap.png" alt="Tmap" />
+      </a>
+      <a href="https://geopandas.org/" target="_blank" rel="noopener">
+        <img src="images/logos/geopandas.png" alt="Geopandas" />
+      </a>
+      <a href="https://www.python.org/" target="_blank" rel="noopener">
+        <img src="images/logos/python.svg" alt="Python" />
+      </a>
+      <a href="https://www.r-project.org/" target="_blank" rel="noopener">
+        <img src="images/logos/r.svg" alt="R" />
+      </a>
+      <a href="https://jupyter.org/" target="_blank" rel="noopener">
+        <img src="images/logos/jupyter.svg" alt="Jupyter" />
+      </a>
+      <a href="https://www.tensorflow.org/" target="_blank" rel="noopener">
+        <img src="images/logos/tensorflow.svg" alt="TensorFlow" />
+      </a>
+      <a href="https://ggplot2.tidyverse.org/" target="_blank" rel="noopener">
+        <img src="images/logos/ggplot.svg" alt="ggplot2" />
+      </a>
+      <a href="https://matplotlib.org/" target="_blank" rel="noopener">
+        <img src="images/logos/matplotlib.svg" alt="Matplotlib" />
+      </a>
+      <a href="https://pandas.pydata.org/" target="_blank" rel="noopener">
+        <img src="images/logos/pandas.svg" alt="Pandas" />
+      </a>
+      <a href="https://seaborn.pydata.org/" target="_blank" rel="noopener">
+        <img src="images/logos/seaborn.svg" alt="Seaborn" />
+      </a>
+      <a href="https://numpy.org/" target="_blank" rel="noopener">
+        <img src="images/logos/numpy.svg" alt="Numpy" />
+      </a>
+      <a href="https://www.djangoproject.com/" target="_blank" rel="noopener">
+        <img src="images/logos/django.svg" alt="Django" />
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<section class="features-grid">
+  <div class="feature-card">
+    <i class="fas fa-chart-line" aria-hidden="true"></i>
+    <h2>Datenanalyse</h2>
+    <p>Von den Rohdaten zu wertvolle Erkenntnissen für Ertrag, Boden und Pflanzengesundheit.</p>
+  </div>
+  <div class="feature-card">
+    <i class="fas fa-file-alt" aria-hidden="true"></i>
+    <h2>Automatisierte Berichte</h2>
+    <p>Individuelle Dashboards und PDF-Auswertungen auf Knopfdruck – jederzeit verfügbar.</p>
+  </div>
+  <div class="feature-card">
+    <i class="fas fa-leaf" aria-hidden="true"></i>
+    <h2>Nachhaltigkeit</h2>
+    <p>Datengetriebene Empfehlungen für ressourcenschonende Bewirtschaftung und langfristigen Erfolg.</p>
+  </div>
+</section>
+
+
+
+<section class="cta">
+  <h2>Lass uns verbinden</h2>
+  <p>Ob Idee, Frage oder einfach Interesse – ich freue mich, von Ihnen zu hören.</p>
+  <a href="mailto:poly4at@gmail.com" class="cta-button">Schreib mir einfach</a>
+</section>
+
+
+
+
+  <footer>
+    <p>&copy; 2025 farmse988 – Datenlösungen für die Landwirtschaft</p>
+    <p><a href="mailto:poly4at@gmail.com">poly4at@gmail.com</a> | <a href="pages/datenschutz.html">Datenschutz</a> | <a href="pages/impressum.html">Impressum</a></p>
+  </footer>
+
 </body>
+
+
 </html>

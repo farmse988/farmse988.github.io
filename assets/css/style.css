@@ -1,0 +1,38 @@
+:root {
+      --background-color: #f9f9fa;
+      --text-color: #1c1c1e;
+      --primary-color: #007aff;
+      --secondary-color: #ffffff;
+      --box-shadow-color: rgba(0, 0, 0, 0.08);
+      --button-bg: #f0f0f5;
+      --button-text: #1c1c1e;
+    }
+
+    .dark-mode {
+      --background-color: #000;
+      --text-color: #fff;
+      --primary-color: #8ff57c;
+      --secondary-color: #191919;
+      --box-shadow-color: rgba(0, 0, 0, 0.6);
+      --button-bg: #222;
+      --button-text: #f2f2f7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+
+
+   

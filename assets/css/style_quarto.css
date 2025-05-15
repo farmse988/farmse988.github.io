@@ -1,0 +1,73 @@
+.quarto-layout {
+  padding: 40px 10vw;
+  text-align: center;
+}
+
+.quarto-layout h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.quarto-layout .subtitle {
+  color: #aaa;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+}
+
+.quarto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.quarto-card {
+  width: 150px;
+  height: 150px;
+  background-color: var(--background-color);
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 4px 20px var(--box-shadow-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.quarto-card:hover {
+  transform: translateY(-8px);
+}
+
+.quarto-card i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.quarto-card h2 {
+  font-size: 0.95rem;
+  margin: 5px 0;
+  color: var(--text-color);
+}
+
+.card-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-links a {
+  font-size: 0.75rem;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.card-links a:hover {
+  background-color: var(--primary-hover);
+}

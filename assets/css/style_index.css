@@ -1,0 +1,216 @@
+ main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5vh 10vw;
+      gap: 5vw;
+      border-bottom: 1px solid #222;
+    }
+    .intro-text {
+      max-width: 50%;
+    }
+
+    .intro-text h1 {
+      font-size: 4vw;
+      line-height: 1.2;
+      color: var(--text-color);
+    }
+
+    .intro-text p {
+      font-size: 1.5vw;
+      margin-top: 20px;
+      color: #aaa;
+    }
+
+    .hero-image img {
+      width: 1600px;
+      max-width: 35vw;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(143, 245, 124, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.02);
+    }
+
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 80px 10vw;
+  background-color: var(--secondary-color);
+}
+
+.feature-card {
+  background-color: #111;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  color: #eee;
+  box-shadow: 0 0 20px rgba(143, 245, 124, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(143, 245, 124, 0.3);
+}
+
+.feature-card i {
+  font-size: 3rem; /* Größe der Icons */
+  color: #8ff57c;  /* Farbe der Icons */
+  margin-bottom: 20px; /* Abstand zum Text */
+  transition: color 0.3s ease; /* Sanfte Farbänderung bei Hover */
+}
+
+.feature-card i:hover {
+  color: #6acb64;  /* Optional: andere Farbe bei Hover */
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.tech-header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.tech-header h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #8ff57c;
+}
+
+.tech-header p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+
+.tech-logos {
+  background-color: var(--background-color);
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.logos-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.logos-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  width: max-content;
+}
+
+.logos-track img {
+  height: 60px;
+  width: auto;
+  margin: 0 40px;
+  opacity: 0.95;
+  transition: transform 0.3s ease;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+.cta {
+  color: #fff;
+  padding: 60px 10vw;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2rem;
+}
+
+.cta p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 40px;
+  background-color: #fff;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+.contact {
+    padding: 50px 10vw;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact button {
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: #0059b3;
+}
+
+/* Logo-Link-Stil */
+.logo a {
+  text-decoration: none; /* Entfernt die Unterstreichung */
+  color: var(--primary-color); /* Verwendet die Primärfarbe */
+  font-weight: bold; /* Optional: Fettgedruckt */
+  font-size: 1.5rem; /* Optional: Schriftgröße anpassen */
+}
+
+.logo a:hover {
+  color: var(--text-color); /* Farbe beim Hover ändern */
+}
+

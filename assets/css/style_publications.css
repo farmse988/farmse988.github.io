@@ -1,0 +1,82 @@
+/* Layout für Publikationsseite */
+.about-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 10vw;
+  align-items: center;
+}
+
+/* Headerbereich */
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  color: #aaa;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* Inhalt: Kartenraster */
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px;
+}
+
+/* Karten-Stil */
+.about-card {
+  background-color: var(--background-color);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: left;
+  color: var(--text-color);
+  box-shadow: 0 4px 20px var(--box-shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  line-height: 1.6;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(143, 245, 124, 0.25);
+}
+
+.about-card i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  display: block;
+}
+
+.about-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.about-card p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1em;
+}
+
+/* Links in Karten */
+.about-card a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.about-card a:hover {
+  color: #aaffaa;
+}

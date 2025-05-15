@@ -1,0 +1,136 @@
+/* Basisvariablen */
+:root {
+  --text-color: #1c1c1e;
+  --primary-color: #8ff57c;
+  --background-color: #111;
+  --secondary-color: #222;
+  --box-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Dunkelmodus Farben */
+.dark-mode {
+  --text-color: #fff;
+  --primary-color: #8ff57c;
+  --background-color: #000;
+  --secondary-color: #333;
+}
+
+/* Repositories Layout */
+.repositories-layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Textbereich links, Cards rechts */
+  gap: 40px;
+  padding: 60px 10vw;
+  align-items: start;
+}
+
+/* Repository Header */
+.repositories-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.repositories-header h1 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.repositories-header p {
+  font-size: 1rem;
+  color: #aaa;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Repositories Textbereich */
+.repositories-text {
+  flex: 1;
+  position: sticky;
+  top: 100px; /* Fixiert den Textbereich beim Scrollen */
+  max-width: 350px;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--box-shadow-color);
+  color: var(--text-color);
+}
+
+/* Repository Cards Layout */
+.repository-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Dynamische Spalten für verschiedene Bildschirmgrößen */
+  gap: 40px;
+}
+
+/* Einzelne Repository Card */
+.repository-card {
+  background-color: var(--background-color);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  color: var(--text-color);
+  box-shadow: 0 4px 20px var(--box-shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.repository-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(143, 245, 124, 0.3); /* Grüner Schatten bei Hover */
+}
+
+.repository-card i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.repository-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.repository-card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.repo-link {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.repo-link:hover {
+  color: #4c8b3c; /* Dunkleres Grün bei Hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .repositories-layout {
+    grid-template-columns: 1fr; /* Eine Spalte bei kleinen Bildschirmen */
+    padding: 60px 5vw;
+  }
+
+  .repositories-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .repositories-header p {
+    font-size: 1rem;
+  }
+
+  .repositories-text {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .repository-cards {
+    grid-template-columns: 1fr 1fr; /* Zwei Karten nebeneinander auf kleinen Bildschirmen */
+  }
+}

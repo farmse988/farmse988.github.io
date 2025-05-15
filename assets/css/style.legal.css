@@ -1,0 +1,31 @@
+.legal-layout {
+  padding: 60px 10vw;
+  max-width: 900px;
+  margin: auto;
+  color: var(--text-color);
+}
+
+.legal-layout h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.legal-layout h2 {
+  font-size: 1.4rem;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.legal-layout p,
+.legal-layout li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.legal-layout a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}

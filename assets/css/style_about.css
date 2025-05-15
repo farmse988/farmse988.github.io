@@ -1,0 +1,68 @@
+/* Allgemeines Layout für About-Seite */
+.about-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 10vw;
+  align-items: center;
+}
+
+/* Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  color: #aaa;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* About Content */
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin-top: 40px;
+}
+
+/* About Cards */
+.about-card {
+  background-color: var(--background-color);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  color: var(--text-color);
+  box-shadow: 0 4px 20px var(--box-shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(143, 245, 124, 0.3);
+}
+
+.about-card i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.about-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.about-card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}

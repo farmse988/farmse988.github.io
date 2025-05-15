@@ -1,0 +1,20 @@
+
+footer {
+  text-align: center;
+  padding: 30px 10vw;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+  margin-top: auto
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
