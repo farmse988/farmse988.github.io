@@ -1,0 +1,114 @@
+/* Allgemeines Layout für About-Seite */
+.about-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 10vw;
+  align-items: center;
+  border-bottom: none; 
+}
+
+/* Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  color: #aaa;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+
+
+/* About Content */
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto); /* 2 Reihen */
+  gap: 40px;
+  max-width: 1200px;
+  margin-top: 40px;
+}
+
+/* About Cards */
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Spalten für große Displays */
+  gap: 40px;
+  max-width: 1200px;
+  margin-top: 40px;
+}
+
+
+
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(143, 245, 124, 0.3);
+}
+
+.about-card i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.about-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.about-card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+    grid-template-rows: repeat(2, auto);    /* 2 Reihen */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-layout {
+    padding: 20px 5vw; /* Weniger Padding auf kleinen Geräten */
+  }
+
+  .about-header h1 {
+    font-size: 1.8rem; /* Kleinere Überschrift */
+  }
+
+  .about-header p {
+    font-size: 1rem;
+    max-width: 100%; /* Breite ausnutzen */
+  }
+
+  .about-content {
+    grid-template-columns: 1fr; /* 1 Spalte */
+    gap: 20px;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .about-card {
+    padding: 20px; /* Weniger Padding */
+  }
+
+  .about-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-card p {
+    font-size: 0.9rem;
+  }
+}

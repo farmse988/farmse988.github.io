@@ -1,0 +1,165 @@
+<!-- _layouts/base.html -->
+<!DOCTYPE html>
+<html lang="de" class="darkmode">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Farmse988 bietet datengetriebene Lösungen für die Landwirtschaft in Österreich."
+    />
+    <meta
+      name="keywords"
+      content="Landwirtschaft, Datenanalyse, Bodenanalyse, Nachhaltigkeit, Agrarwissenschaften, Österreich"
+    />
+    <meta name="author" content="Sebastian Wieser, Farmse988 Team" />
+
+    <title>
+      Quarto – farmse988
+    </title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!--global  -->
+    <link rel="stylesheet" href="/assets/css/global.css" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/style_index.css" />
+    <link rel="stylesheet" href="/assets/css/style_about.css" />
+    <link rel="stylesheet" href="/assets/css/style_contact.css" />
+    <link rel="stylesheet" href="/assets/css/style_publications.css" />
+    <link rel="stylesheet" href="/assets/css/style_repositories.css" />
+    <link rel="stylesheet" href="/assets/css/style_services.css" />
+    <link rel="stylesheet" href="/assets/css/style_services.css" />
+    <link rel="stylesheet" href="/assets/css/style_legal.css" />
+    <link rel="stylesheet" href="/assets/css/style_quarto.css" />
+    
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/">farmse988</a>
+      </div>
+
+      <nav id="top_navigation">
+        <ul class="nav-links">
+          <li><a href="/pages/about.html">Über mich</a></li>
+          <li><a href="/pages/services.html">Portfolio</a></li>
+          <li><a href="/pages/repositories.html">Repositories</a></li>
+          <li><a href="/pages/publications.html">Publikationen</a></li>
+          <li><a href="/pages/contact.html">Kontakt</a></li>
+        </ul>
+
+        <div class="nav-icons">
+          <button id="theme-switch" aria-label="Dark Mode umschalten">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+            >
+              <path
+                d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+            >
+              <path
+                d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"
+              />
+            </svg>
+          </button>
+          <div class="burger"><span></span><span></span><span></span></div>
+        </div>
+      </nav>
+    </header>
+
+    <main><main class="quarto-layout">
+  <h1>Quarto Workflows</h1>
+  <p class="subtitle">Templates, Automatisierung und Berichterstellung mit <strong>Quarto</strong>.</p>
+
+  <section class="quarto-grid">
+
+    <div class="quarto-card">
+      <i class="fas fa-file-alt"></i>
+      <h2>Bodenanalyse Mikrobielle Biomasse</h2>
+      <div class="card-links">
+        <a href="https://farmse988.github.io/Microbial_biomass_C_N/microbial_biomass_c_n.html" target="_blank">🌐 Quarto-Seite</a>
+        <a href="" target="_blank">📁 GitHub Repo</a>
+      </div>
+    </div>
+
+    <div class="quarto-card">
+      <i class="fas fa-chart-line"></i>
+      <h2>Kartenerstellung mit leaflet (derzeit nicht in Betrieb)</h2>
+      <div class="card-links">
+        <a href="" target="_blank">🌐 Quarto-Seite</a>
+        <a href="" target="_blank">📁 GitHub Repo</a>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+
+
+</main>
+
+    <footer>
+      <p>&copy; 2025 farmse988 – Datenlösungen für die Landwirtschaft</p>
+      <p>
+        <a href="mailto:poly4at@gmail.com">poly4at@gmail.com</a> |
+        <a href="/pages/datenschutz.html">Datenschutz</a> |
+        <a href="/pages/impressum.html">Impressum</a>
+      </p>
+    </footer>
+
+    <script>
+      
+      document.addEventListener("DOMContentLoaded", () => {
+        const htmlEl = document.documentElement;
+        const themeSwitch = document.getElementById("theme-switch");
+        const currentMode = localStorage.getItem("darkmode");
+
+
+        const enableDark = () => {
+          htmlEl.classList.add("darkmode");
+          localStorage.setItem("darkmode", "active");
+        };
+
+        const disableDark = () => {
+          htmlEl.classList.remove("darkmode");
+          localStorage.setItem("darkmode", "inactive");
+        };
+
+        if (currentMode === "active" || currentMode === null) {
+  enableDark();
+} else {
+  disableDark();
+}
+
+        themeSwitch.addEventListener("click", () => {
+          htmlEl.classList.contains("darkmode") ? disableDark() : enableDark();
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".burger").addEventListener("click", () => {
+    document.querySelector(".burger").classList.toggle("active");
+    document.querySelector(".nav-links").classList.toggle("open");
+  });
+});
+    </script>
+  </body>
+</html>

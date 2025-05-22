@@ -1,0 +1,127 @@
+.repositories-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 10vw;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  border-bottom: none;
+
+}
+
+/* Headerbereich */
+.repositories-header {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.repositories-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--primary-color);
+}
+
+.repositories-header p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Content Bereich für Karten */
+.repositories-content {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px;
+}
+
+/* Karten-Grid */
+.repository-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 36px;
+}
+
+/* Einzelne Repository-Karte */
+.repository-card {
+  background-color: var(--card-background, #1e1e1e);
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  line-height: 1.65;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.repository-card:hover,
+.repository-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px var(--hover-shadow);
+  outline: none;
+}
+
+/* Icon oben */
+.repository-card i {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 18px;
+}
+
+/* Kartentitel */
+.repository-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Karten-Text */
+.repository-card p {
+  font-size: 1.05rem;
+  color: var(--text-secondary, #ccc); /* helles Grau für guten Kontrast */
+  margin-bottom: 1.25em;
+  line-height: 1.6;
+}
+
+/* Links in Karten */
+.repo-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+
+.repo-link:hover,
+.repo-link:focus {
+  color: #aaffaa;
+  border-color: #aaffaa;
+  outline: none;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+  .repositories-layout {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .repository-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .repository-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

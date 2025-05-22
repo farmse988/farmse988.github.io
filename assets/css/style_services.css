@@ -1,0 +1,108 @@
+/* Service Header */
+/* Layout für Services */
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Linke Spalte für Header, rechte für Cards */
+  gap: 40px;
+  padding: 60px 10vw;
+  align-items: start;
+  border-bottom: none;
+
+}
+
+/* Fixierter Service Header */
+.service-header {
+  position: sticky;
+  top: 20px; /* Abstand vom oberen Rand */
+  align-self: start;
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--box-shadow-color);
+}
+
+.service-header h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.service-header p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Modernisierte Service Cards */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Dynamische Spalten */
+  gap: 40px;
+}
+
+.service-card {
+  background-color: var(--card-background, #1e1e1e);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  color: var(--text-color);
+  box-shadow: 0 4px 20px var(--box-shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(143, 245, 124, 0.3);
+}
+
+.service-card i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.service-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+
+
+.service-card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+/* Footer */
+
+@media (max-width: 768px) {
+  .services-layout {
+    grid-template-columns: 1fr; /* Gesamt-Layout einspaltig */
+    padding: 40px 5vw; /* Optional: weniger Padding */
+    justify-content: center; /* Inhalt zentrieren */
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr; /* Karten einspaltig */
+    gap: 30px; /* Optional: Abstand anpassen */
+    justify-items: center; /* Karten zentrieren */
+  }
+
+  .service-header {
+    position: static; /* Sticky entfernen für bessere mobile UX */
+    padding: 15px 0;
+    margin-bottom: 20px;
+    box-shadow: none;
+    text-align: center; /* Header-Text zentrieren */
+  }
+
+  /* Optional: die Karten max-width geben, damit sie nicht zu breit werden */
+  .service-card {
+    max-width: 400px; /* z.B. max. Breite */
+    width: 100%; /* aber flexibel */
+  }
+}
