@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/pages/about.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/pages/contact.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/pages/datenschutz.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/pages/demo.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/pages/impressum.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/pages/publications.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/pages/quarto_repo.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/pages/repositories.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/pages/services.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/Microbial_biomass_C_N/microbial_biomass_c_n.html</loc>
+<lastmod>2025-05-20T09:38:16+02:00</lastmod>
+</url>
+</urlset>

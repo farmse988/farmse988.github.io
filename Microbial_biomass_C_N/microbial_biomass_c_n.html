@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.46">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sebastian Wieser">
+
+<title>Microbial Biomass Carbon &amp; Nitrogen</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="microbial_biomass_c_n_files/libs/clipboard/clipboard.min.js"></script>
+<script src="microbial_biomass_c_n_files/libs/quarto-html/quarto.js"></script>
+<script src="microbial_biomass_c_n_files/libs/quarto-html/popper.min.js"></script>
+<script src="microbial_biomass_c_n_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="microbial_biomass_c_n_files/libs/quarto-html/anchor.min.js"></script>
+<link href="microbial_biomass_c_n_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="microbial_biomass_c_n_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="microbial_biomass_c_n_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="microbial_biomass_c_n_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="microbial_biomass_c_n_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="microbial_biomass_c_n_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="microbial_biomass_c_n_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="microbial_biomass_c_n_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+<script src="microbial_biomass_c_n_files/libs/datatables-binding-0.33/datatables.js"></script>
+
+<script src="microbial_biomass_c_n_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="microbial_biomass_c_n_files/libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="microbial_biomass_c_n_files/libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+<script src="microbial_biomass_c_n_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+<link href="microbial_biomass_c_n_files/libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="microbial_biomass_c_n_files/libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+<script src="microbial_biomass_c_n_files/libs/plotly-binding-4.10.4/plotly.js"></script>
+
+<script src="microbial_biomass_c_n_files/libs/typedarray-0.1/typedarray.min.js"></script>
+
+<link href="microbial_biomass_c_n_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="microbial_biomass_c_n_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Microbial Biomass Carbon &amp; Nitrogen</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Sebastian Wieser </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">5/20/25</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#carbon-mb-c-and-nitrogen-mb-n" id="toc-carbon-mb-c-and-nitrogen-mb-n" class="nav-link active" data-scroll-target="#carbon-mb-c-and-nitrogen-mb-n">Carbon (MB-C) and Nitrogen (MB-N)</a></li>
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
+  <li><a href="#set-working-directory" id="toc-set-working-directory" class="nav-link" data-scroll-target="#set-working-directory">Set working directory</a></li>
+  <li><a href="#load-toc-tdn-values" id="toc-load-toc-tdn-values" class="nav-link" data-scroll-target="#load-toc-tdn-values">Load TOC &amp; TDN values</a>
+  <ul class="collapse">
+  <li><a href="#data-preperation" id="toc-data-preperation" class="nav-link" data-scroll-target="#data-preperation">Data preperation</a></li>
+  <li><a href="#load-data-for-weigh-in-and-dry-weight-factor" id="toc-load-data-for-weigh-in-and-dry-weight-factor" class="nav-link" data-scroll-target="#load-data-for-weigh-in-and-dry-weight-factor">Load data for weigh in and dry weight factor</a></li>
+  <li><a href="#combine-datasets" id="toc-combine-datasets" class="nav-link" data-scroll-target="#combine-datasets">Combine Datasets</a></li>
+  </ul></li>
+  <li><a href="#toc-tdn-blank-mgl" id="toc-toc-tdn-blank-mgl" class="nav-link" data-scroll-target="#toc-tdn-blank-mgl">TOC &amp; TDN Blank (mg/l)</a></li>
+  <li><a href="#extraction-volume-ml" id="toc-extraction-volume-ml" class="nav-link" data-scroll-target="#extraction-volume-ml">Extraction volume (ml)</a>
+  <ul class="collapse">
+  <li><a href="#calculation-toc-tdn" id="toc-calculation-toc-tdn" class="nav-link" data-scroll-target="#calculation-toc-tdn">Calculation TOC &amp; TDN</a>
+  <ul class="collapse">
+  <li><a href="#calculation-microbial-biomass" id="toc-calculation-microbial-biomass" class="nav-link" data-scroll-target="#calculation-microbial-biomass">Calculation microbial biomass</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#final-results" id="toc-final-results" class="nav-link" data-scroll-target="#final-results">Final results</a>
+  <ul class="collapse">
+  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table">Table</a></li>
+  <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots">Plots</a>
+  <ul class="collapse">
+  <li><a href="#microbial-carbon" id="toc-microbial-carbon" class="nav-link" data-scroll-target="#microbial-carbon">Microbial Carbon</a></li>
+  <li><a href="#microbial-nitrogen" id="toc-microbial-nitrogen" class="nav-link" data-scroll-target="#microbial-nitrogen">Microbial Nitrogen</a></li>
+  <li><a href="#microbial-carbon-to-nitrogen-ratio" id="toc-microbial-carbon-to-nitrogen-ratio" class="nav-link" data-scroll-target="#microbial-carbon-to-nitrogen-ratio">Microbial Carbon to Nitrogen ratio</a></li>
+  </ul></li>
+  <li><a href="#write-final-data-into-an-excel-file" id="toc-write-final-data-into-an-excel-file" class="nav-link" data-scroll-target="#write-final-data-into-an-excel-file">Write final data into an excel file</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="carbon-mb-c-and-nitrogen-mb-n" class="level3">
+<h3 class="anchored" data-anchor-id="carbon-mb-c-and-nitrogen-mb-n">Carbon (MB-C) and Nitrogen (MB-N)</h3>
+<p>This protocol calculates Microbial Biomass Carbon (MB-C) and Nitrogen (MB-N) based on fumigated and non-fumigated extracts, measured with the Shimadzu TOC-L Total Organic Carbon Analyzer.</p>
+</section>
+<section id="requirements" class="level2">
+<h2 class="anchored" data-anchor-id="requirements">Requirements</h2>
+<ul>
+<li><p>In order for this script to run correctly, you need to fill out the following Excel files:</p>
+<ul>
+<li><a href="Microbial_biomass_C_N/Microbial_biomass_C_N/raw_data.xlsx">TOC &amp; TDN data</a></li>
+<li><a href="https://github.com/farmse988/scripts/blob/main/Microbial_biomass_C_N/Microbial_biomass_C_N/Weighin.xlsx">weight data</a></li>
+</ul>
+<p>Please ensure that the Excel files are properly filled out before running the script.</p></li>
+<li><p>Fumigated and non-fumigated TOC and TDN values</p></li>
+<li><p>Unique sample identifier (`LABNr.`)</p></li>
+<li><p>Weight before extraction and dry weight factor</p></li>
+<li><p>Extraction volume (mL)</p></li>
+<li><p>Blank TOC and TDN values</p></li>
+<li><p>Load the following R packages</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="set-working-directory" class="level2">
+<h2 class="anchored" data-anchor-id="set-working-directory">Set working directory</h2>
+</section>
+<section id="load-toc-tdn-values" class="level2">
+<h2 class="anchored" data-anchor-id="load-toc-tdn-values">Load TOC &amp; TDN values</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"raw_data.xlsx"</span>, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">sheet =</span> <span class="st">"data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="data-preperation" class="level3">
+<h3 class="anchored" data-anchor-id="data-preperation">Data preperation</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(raw_data)[<span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="st">"LabNr.fum"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>raw_data<span class="sc">$</span>LabNr.fum <span class="ot">&lt;-</span> raw_data<span class="sc">$</span>LABNr.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Warning =</span> <span class="fu">if_else</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_extract</span>(<span class="st">`</span><span class="at">C/N nicht fumigiert</span><span class="st">`</span>, <span class="st">"</span><span class="sc">\\</span><span class="st">d+"</span>) <span class="sc">==</span> <span class="fu">str_extract</span>(<span class="st">`</span><span class="at">C/N fumigiert</span><span class="st">`</span>, <span class="st">"</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      <span class="cn">NA_character_</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Warning: C/N mismatch"</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">C/N nicht fumigiert</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">if_else</span>(<span class="fu">str_detect</span>(<span class="st">`</span><span class="at">C/N nicht fumigiert</span><span class="st">`</span>, <span class="st">"nf"</span>), <span class="st">"not fumigated"</span>, <span class="st">"Attention"</span>),</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">C/N fumigiert</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">if_else</span>(<span class="fu">str_detect</span>(<span class="st">`</span><span class="at">C/N fumigiert</span><span class="st">`</span>, <span class="st">"fum"</span>), <span class="st">"fumigated"</span>, <span class="st">"Attention"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> raw_data[,<span class="sc">-</span><span class="dv">9</span>]</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>non_fum_data <span class="ot">&lt;-</span> raw_data[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)]</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>fum_data <span class="ot">&lt;-</span> raw_data[,<span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>)]</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(non_fum_data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"LABNr"</span>, <span class="st">"lab_treatment"</span>, <span class="st">"TOC"</span>, <span class="st">"TDN"</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(fum_data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"LABNr"</span>, <span class="st">"lab_treatment"</span>, <span class="st">"TOC"</span>, <span class="st">"TDN"</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>raw_data_long <span class="ot">&lt;-</span> <span class="fu">rbind.data.frame</span>(non_fum_data, fum_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="load-data-for-weigh-in-and-dry-weight-factor" class="level3">
+<h3 class="anchored" data-anchor-id="load-data-for-weigh-in-and-dry-weight-factor">Load data for weigh in and dry weight factor</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>weights <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"Weighin.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="combine-datasets" class="level3">
+<h3 class="anchored" data-anchor-id="combine-datasets">Combine Datasets</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>combi_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(raw_data_long, weights, <span class="at">by =</span> <span class="st">"LABNr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="toc-tdn-blank-mgl" class="level1">
+<h1>TOC &amp; TDN Blank (mg/l)</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>TOC_Blank <span class="ot">&lt;-</span> <span class="fl">2.095</span>  <span class="co"># enter your value</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>TDN_Blank <span class="ot">&lt;-</span> <span class="fl">0.5317</span> <span class="co"># enter your value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="extraction-volume-ml" class="level1">
+<h1>Extraction volume (ml)</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>extraction_volume <span class="ot">&lt;-</span> <span class="dv">25</span> <span class="co"># default 25</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="calculation-toc-tdn" class="level2">
+<h2 class="anchored" data-anchor-id="calculation-toc-tdn">Calculation TOC &amp; TDN</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>calculation_data <span class="ot">&lt;-</span> combi_data</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>calculation_data<span class="sc">$</span>TOC_mg_25ml <span class="ot">&lt;-</span> (calculation_data<span class="sc">$</span>TOC<span class="sc">-</span>TOC_Blank)<span class="sc">*</span>(extraction_volume<span class="sc">/</span><span class="dv">1000</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>calculation_data<span class="sc">$</span>TDN_mg_25ml <span class="ot">&lt;-</span> (calculation_data<span class="sc">$</span>TDN<span class="sc">-</span>TDN_Blank)<span class="sc">*</span>(extraction_volume<span class="sc">/</span><span class="dv">1000</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>calculation_data<span class="sc">$</span>TOC_mg_g_fresh_soil <span class="ot">&lt;-</span> calculation_data<span class="sc">$</span>TOC_mg_25ml<span class="sc">/</span>calculation_data<span class="sc">$</span>weigh_in</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>calculation_data<span class="sc">$</span>TDN_mg_g_fresh_soil <span class="ot">&lt;-</span> calculation_data<span class="sc">$</span>TDN_mg_25ml<span class="sc">/</span>calculation_data<span class="sc">$</span>weigh_in</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>calculation_data<span class="sc">$</span>TOC_mg_g_dry_soil <span class="ot">&lt;-</span> calculation_data<span class="sc">$</span>TOC_mg_25ml<span class="sc">/</span>calculation_data<span class="sc">$</span>weigh_in_dry </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>calculation_data<span class="sc">$</span>TDN_mg_g_dry_soil <span class="ot">&lt;-</span> calculation_data<span class="sc">$</span>TDN_mg_25ml<span class="sc">/</span>calculation_data<span class="sc">$</span>weigh_in_dry</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="calculation-microbial-biomass" class="level3">
+<h3 class="anchored" data-anchor-id="calculation-microbial-biomass">Calculation microbial biomass</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>microbial_data <span class="ot">&lt;-</span> calculation_data[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">12</span>,<span class="dv">13</span>)]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>microbial_data_wide <span class="ot">&lt;-</span> microbial_data <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> lab_treatment,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> <span class="fu">c</span>(TOC_mg_g_dry_soil,TDN_mg_g_dry_soil))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>microbial_data_wide<span class="sc">$</span>MBC <span class="ot">&lt;-</span> ((microbial_data_wide<span class="sc">$</span>TOC_mg_g_dry_soil_fumigated<span class="sc">-</span>microbial_data_wide<span class="sc">$</span><span class="st">`</span><span class="at">TOC_mg_g_dry_soil_not fumigated</span><span class="st">`</span>))<span class="sc">*</span><span class="dv">1000</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>microbial_data_wide<span class="sc">$</span>MBN <span class="ot">&lt;-</span> ((microbial_data_wide<span class="sc">$</span>TDN_mg_g_dry_soil_fumigated<span class="sc">-</span>microbial_data_wide<span class="sc">$</span><span class="st">`</span><span class="at">TDN_mg_g_dry_soil_not fumigated</span><span class="st">`</span>))<span class="sc">*</span><span class="dv">1000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="final-results" class="level1">
+<h1>Final results</h1>
+<section id="table" class="level2">
+<h2 class="anchored" data-anchor-id="table">Table</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> microbial_data_wide[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">7</span>)]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>results<span class="sc">$</span>MBC_to_MBN <span class="ot">&lt;-</span> results<span class="sc">$</span>MBC <span class="sc">/</span> results<span class="sc">$</span>MBN</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>results_table <span class="ot">&lt;-</span> results</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(results_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"LABNr"</span>, </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"MB-C (µg/g dry soil)"</span>, </span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"MB-N (µg/g dry soil)"</span>, </span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"MB-C to MB-N Ratio"</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  results_table,</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">rownames =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">pageLength =</span> <span class="dv">10</span>,               <span class="co"># Number of rows per page</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">autoWidth =</span> <span class="cn">TRUE</span>,             <span class="co"># Automatically adjust column width</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">dom =</span> <span class="st">'t&lt;"bottom"p&gt;'</span>          <span class="co"># Simplify layout: table and pagination only</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  ))<span class="sc">%&gt;%</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatRound</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"MB-C (µg/g dry soil)"</span>,</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"MB-N (µg/g dry soil)"</span>,</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"MB-C to MB-N Ratio"</span>), <span class="at">digits =</span> <span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ceca3b98c48244e8e890" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ceca3b98c48244e8e890">{"x":{"filter":"none","vertical":false,"data":[["21/1100","21/1101","21/1102","21/1103","21/1104","21/1105","21/1106","21/1107","21/1108","21/1109","21/1110","21/1111","21/1112","21/1113","21/1114","21/1115","21/1116","21/1117","21/1118","21/1119","21/1120","21/1121","21/1122","21/1123","21/1124","21/1125","21/1126","21/1127","21/1128","21/1129","21/1130","21/1131","21/1132","21/1133","21/1134","21/1135","21/1136","21/1137","21/1138","21/1139"],[154.7916666666667,77.2916666666667,167.9166666666667,120.9027777777778,206.1111111111112,163.8194444444445,127.7083333333333,68.5416666666667,132.3611111111111,123.6111111111111,95.62500000000001,84.0277777777778,140.6944444444445,70.06944444444446,226.25,168.4027777777778,151.3194444444445,94.86111111111114,172.4305555555556,130.3472222222223,219.3055555555555,104.6527777777778,308.4722222222222,112.5000000000001,273.8194444444445,238.3333333333334,225.3472222222222,80.00000000000001,257.361111111111,154.0277777777777,152.5,90.62500000000001,287.6388888888889,128.4027777777778,245.8333333333334,130.3472222222222,185.4861111111112,102.0833333333333,188.0555555555556,82.43055555555556],[27.9375,16.36805555555555,31.33333333333333,23.70138888888889,29.83333333333334,26.31249999999999,24.36805555555555,14.76388888888888,27.68055555555555,26.95138888888889,22.34027777777779,16.25,30.58333333333332,13.35416666666667,49.49305555555554,38.09722222222221,36.36805555555556,24.75694444444445,45.06249999999999,34.75694444444444,32.37500000000001,13.11805555555555,38.53472222222224,12.33333333333334,39.83333333333333,30.00694444444444,29.27083333333334,8.833333333333339,37.84722222222222,23.10416666666666,24.09027777777778,15.85416666666666,48.29166666666666,18.1875,32.13194444444443,15.27083333333333,27.1875,15.90277777777778,26.22222222222222,6.722222222222227],[5.540641312453393,4.722104369961818,5.35904255319149,5.101084090243189,6.908752327746742,6.225917128529959,5.240809347392421,4.642521166509882,4.781736076266934,4.586446792063903,4.280385452284737,5.170940170940172,4.60036330608538,5.247009880395216,4.571348393433423,4.420342690484872,4.160779071987779,3.831697054698457,3.826475574048391,3.750249750249752,6.773916773916772,7.9777660137639,8.005045954225983,9.121621621621621,6.874128312412834,7.942605878268922,7.698695136417554,9.056603773584902,6.799999999999998,6.666666666666667,6.33035456904007,5.716162943495403,5.956284153005466,7.059946544482627,7.650745623514161,8.535698044565711,6.822477650063858,6.419213973799125,7.171610169491527,12.26239669421487]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>LABNr<\/th>\n      <th>MB-C (µg/g dry soil)<\/th>\n      <th>MB-N (µg/g dry soil)<\/th>\n      <th>MB-C to MB-N Ratio<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":true,"dom":"t<\"bottom\"p>","columnDefs":[{"targets":1,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[1,2,3]},{"name":"LABNr","targets":0},{"name":"MB-C (µg/g dry soil)","targets":1},{"name":"MB-N (µg/g dry soil)","targets":2},{"name":"MB-C to MB-N Ratio","targets":3}],"order":[],"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render"],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="plots" class="level2">
+<h2 class="anchored" data-anchor-id="plots">Plots</h2>
+<section id="microbial-carbon" class="level3">
+<h3 class="anchored" data-anchor-id="microbial-carbon">Microbial Carbon</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>MBC <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results, <span class="fu">aes</span>(<span class="at">y =</span> MBC, <span class="at">x =</span> <span class="st">"LABNr"</span>, <span class="at">text =</span> LABNr)) <span class="sc">+</span>  <span class="co"># Add `text = LABNr`</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"darkgreen"</span>,         <span class="co"># Set the boxplot color to green</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,            <span class="co"># Set the box color to dark green</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.shape =</span> <span class="dv">16</span>,         <span class="co"># Default outlier shape for better visibility</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.colour =</span> <span class="st">"red"</span>,     <span class="co"># Set the outlier color to red</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.size =</span> <span class="dv">5</span>            <span class="co"># Set the outlier size for visibility</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,            <span class="co"># Set jitter points color to black</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>,                <span class="co"># Slight transparency for the points</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">0</span>,                  <span class="co"># Remove width for jittering</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">text =</span> LABNr)           <span class="co"># Pass `LABNr` for the hover text</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"MBC (µg/g dry soil)"</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),  <span class="co"># Rotate X-axis labels</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),                <span class="co"># Set axis title font size</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">14</span>)    <span class="co"># Center plot title and adjust size</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert ggplot to interactive plotly plot</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(MBC, <span class="at">tooltip =</span> <span class="st">"text"</span>)  <span class="co"># Show LABNr on hover</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-c749fbd8389a62107846" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-c749fbd8389a62107846">{"x":{"data":[{"x":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"y":[154.79166666666669,77.2916666666667,167.91666666666669,120.90277777777781,206.11111111111117,163.81944444444449,127.70833333333331,68.5416666666667,132.36111111111106,123.61111111111114,95.625000000000014,84.0277777777778,140.69444444444446,70.069444444444457,226.25,168.4027777777778,151.31944444444446,94.861111111111143,172.4305555555556,130.34722222222226,219.30555555555554,104.65277777777779,308.47222222222217,112.50000000000007,273.81944444444451,238.33333333333337,225.3472222222222,80.000000000000014,257.36111111111103,154.02777777777774,152.50000000000003,90.625000000000014,287.63888888888891,128.4027777777778,245.83333333333337,130.3472222222222,185.48611111111117,102.08333333333333,188.05555555555557,82.430555555555557],"hoverinfo":"y","type":"box","fillcolor":"rgba(0,100,0,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"},"size":5.6692913385826778},"line":{"color":"rgba(0,0,0,1)","width":1.8897637795275593},"showlegend":false,"xaxis":"x","yaxis":"y","frame":null},{"x":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"y":[154.83684937359715,77.11388352580579,167.7427783506638,121.09515726969892,206.09090361466068,163.67659115956894,127.81657046846681,68.714955578273617,132.25878889479722,123.42412052461363,95.719410658193141,84.108056500010832,140.58603857416247,70.158860287538531,226.35458116502397,168.55435232620223,151.16607375133836,94.754824013992561,172.27563275749955,130.3000381742475,219.35657473914841,104.59642590377997,308.37666455717078,112.47458744337531,273.93518890648727,238.47537324035596,225.47991587610966,80.081432980588758,257.34411886137798,154.16135875003718,152.67322242839472,90.65868487291867,287.8316798574524,128.48507087920899,245.65406293367661,130.43353595832983,185.33823237062387,102.01688080907074,188.13704483835804,82.508629758001518],"text":["21/1100","21/1101","21/1102","21/1103","21/1104","21/1105","21/1106","21/1107","21/1108","21/1109","21/1110","21/1111","21/1112","21/1113","21/1114","21/1115","21/1116","21/1117","21/1118","21/1119","21/1120","21/1121","21/1122","21/1123","21/1124","21/1125","21/1126","21/1127","21/1128","21/1129","21/1130","21/1131","21/1132","21/1133","21/1134","21/1135","21/1136","21/1137","21/1138","21/1139"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":0.5,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.228310502283104,"r":7.3059360730593621,"b":30.41575444219993,"l":44.433374844333756},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,1.6000000000000001],"tickmode":"array","ticktext":["LABNr"],"tickvals":[1],"categoryorder":"array","categoryarray":["LABNr"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[56.545138888888928,320.46874999999994],"tickmode":"array","ticktext":["75","100","125","150","175","200","225","250","275","300"],"tickvals":[75,100,125,150,175,200,225,250,275,300],"categoryorder":"array","categoryarray":["75","100","125","150","175","200","225","250","275","300"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"MBC (µg/g dry soil)","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"db821ab5a09":{"x":{},"y":{},"text":{},"type":"box"},"db81d6011f9":{"x":{},"y":{},"text":{}}},"cur_data":"db821ab5a09","visdat":{"db821ab5a09":["function (y) ","x"],"db81d6011f9":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="microbial-nitrogen" class="level3">
+<h3 class="anchored" data-anchor-id="microbial-nitrogen">Microbial Nitrogen</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>MBN <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results, <span class="fu">aes</span>(<span class="at">y =</span> MBN, <span class="at">x =</span> <span class="st">"LABNr"</span>, <span class="at">text =</span> LABNr)) <span class="sc">+</span>  <span class="co"># Add `text = LABNr`</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"#000064"</span>,         <span class="co"># Set the boxplot color to green</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,            <span class="co"># Set the box color to dark green</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.shape =</span> <span class="dv">16</span>,         <span class="co"># Default outlier shape for better visibility</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.colour =</span> <span class="st">"red"</span>,     <span class="co"># Set the outlier color to red</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.size =</span> <span class="dv">5</span>            <span class="co"># Set the outlier size for visibility</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,            <span class="co"># Set jitter points color to black</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>,                <span class="co"># Slight transparency for the points</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">0</span>,                  <span class="co"># Remove width for jittering</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">text =</span> LABNr)           <span class="co"># Pass `LABNr` for the hover text</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"MBN (µg/g dry soil)"</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),  <span class="co"># Rotate X-axis labels</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),                <span class="co"># Set axis title font size</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">14</span>)    <span class="co"># Center plot title and adjust size</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in geom_jitter(color = "black", alpha = 0.5, width = 0, aes(text =
+LABNr)): Ignoring unknown aesthetics: text</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert ggplot to interactive plotly plot</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(MBN, <span class="at">tooltip =</span> <span class="st">"text"</span>)  <span class="co"># Show LABNr on hover</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-a996c1515cb1a75e1a50" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a996c1515cb1a75e1a50">{"x":{"data":[{"x":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"y":[27.937500000000004,16.368055555555554,31.333333333333332,23.701388888888889,29.833333333333336,26.312499999999989,24.368055555555546,14.763888888888882,27.68055555555555,26.951388888888886,22.340277777777786,16.25,30.583333333333318,13.35416666666667,49.493055555555543,38.097222222222214,36.368055555555557,24.75694444444445,45.062499999999993,34.756944444444436,32.375000000000007,13.11805555555555,38.534722222222236,12.333333333333343,39.833333333333329,30.006944444444439,29.270833333333343,8.8333333333333393,37.847222222222221,23.104166666666661,24.090277777777779,15.854166666666663,48.291666666666657,18.187500000000004,32.131944444444429,15.27083333333333,27.187500000000004,15.90277777777778,26.222222222222218,6.7222222222222268],"hoverinfo":"y","type":"box","fillcolor":"rgba(0,0,100,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"},"size":5.6692913385826778},"line":{"color":"rgba(0,0,0,1)","width":1.8897637795275593},"showlegend":false,"xaxis":"x","yaxis":"y","frame":null},{"x":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"y":[27.939481845203169,16.383601541905147,31.340154449055746,23.703307109284733,29.820915366255214,26.321544948467302,24.37921423384298,14.747245220025061,27.695394116120099,26.963703477765534,22.353249369817796,16.240192205625739,30.595397131188967,13.365796178327102,49.506923954964918,38.102569080957771,36.375458522490227,24.771635852561392,45.062213023728681,34.751933417933621,32.394103385558516,13.133786989071972,38.539212800085096,12.329157217974887,39.818330658769177,30.013127329976605,29.271673675045744,8.8386281798438553,37.851868247509827,23.118866998941581,24.102854297258375,15.835380996785689,48.277458703617505,18.180755470691821,32.137075500600282,15.271296782551021,27.182991201499117,15.920519890478403,26.239666025609605,6.7295539799443915],"text":["21/1100","21/1101","21/1102","21/1103","21/1104","21/1105","21/1106","21/1107","21/1108","21/1109","21/1110","21/1111","21/1112","21/1113","21/1114","21/1115","21/1116","21/1117","21/1118","21/1119","21/1120","21/1121","21/1122","21/1123","21/1124","21/1125","21/1126","21/1127","21/1128","21/1129","21/1130","21/1131","21/1132","21/1133","21/1134","21/1135","21/1136","21/1137","21/1138","21/1139"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":0.5,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.228310502283104,"r":7.3059360730593621,"b":30.41575444219993,"l":38.588625985886267},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,1.6000000000000001],"tickmode":"array","ticktext":["LABNr"],"tickvals":[1],"categoryorder":"array","categoryarray":["LABNr"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[4.5829871355850926,51.646159041602054],"tickmode":"array","ticktext":["5","10","15","20","25","30","35","40","45","50"],"tickvals":[5,10,15,20,25,30,35,40,45,50],"categoryorder":"array","categoryarray":["5","10","15","20","25","30","35","40","45","50"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"MBN (µg/g dry soil)","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"db8441c5429":{"x":{},"y":{},"text":{},"type":"box"},"db840825266":{"x":{},"y":{},"text":{}}},"cur_data":"db8441c5429","visdat":{"db8441c5429":["function (y) ","x"],"db840825266":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="microbial-carbon-to-nitrogen-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="microbial-carbon-to-nitrogen-ratio">Microbial Carbon to Nitrogen ratio</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(results, <span class="fu">aes</span>(<span class="at">y =</span> MBC_to_MBN, <span class="at">x =</span> <span class="st">"LABNr"</span>, <span class="at">text =</span> LABNr)) <span class="sc">+</span>  <span class="co"># Add `text = LABNr`</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"#640000"</span>,         <span class="co"># Set the boxplot color to green</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,            <span class="co"># Set the box color to dark green</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.shape =</span> <span class="dv">16</span>,         <span class="co"># Default outlier shape for better visibility</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.colour =</span> <span class="st">"red"</span>,     <span class="co"># Set the outlier color to red</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.size =</span> <span class="dv">5</span>            <span class="co"># Set the outlier size for visibility</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,            <span class="co"># Set jitter points color to black</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>,                <span class="co"># Slight transparency for the points</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">0</span>,                  <span class="co"># Remove width for jittering</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">text =</span> LABNr)           <span class="co"># Pass `LABNr` for the hover text</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Microbial C/N ratio"</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),  <span class="co"># Rotate X-axis labels</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),                <span class="co"># Set axis title font size</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">14</span>)    <span class="co"># Center plot title and adjust size</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in geom_jitter(color = "black", alpha = 0.5, width = 0, aes(text =
+LABNr)): Ignoring unknown aesthetics: text</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert ggplot to interactive plotly plot</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(ratio, <span class="at">tooltip =</span> <span class="st">"text"</span>)  <span class="co"># Sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-84873b296be7cdfbc945" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-84873b296be7cdfbc945">{"x":{"data":[{"x":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"y":[5.5406413124533929,4.7221043699618184,5.3590425531914905,5.1010840902431891,6.9087523277467424,6.225917128529959,5.2408093473924211,4.6425211665098818,4.7817360762669336,4.5864467920639029,4.2803854522847367,5.1709401709401721,4.6003633060853799,5.2470098803952157,4.5713483934334231,4.4203426904848717,4.1607790719877791,3.8316970546984574,3.8264755740483913,3.7502497502497523,6.7739167739167723,7.9777660137639002,8.0050459542259826,9.121621621621621,6.8741283124128341,7.9426058782689219,7.6986951364175535,9.0566037735849019,6.799999999999998,6.666666666666667,6.33035456904007,5.7161629434954033,5.9562841530054662,7.059946544482627,7.6507456235141609,8.5356980445657111,6.822477650063858,6.419213973799125,7.1716101694915269,12.262396694214868],"hoverinfo":"y","type":"box","fillcolor":"rgba(100,0,0,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"},"size":5.6692913385826778},"line":{"color":"rgba(0,0,0,1)","width":1.8897637795275593},"showlegend":false,"xaxis":"x","yaxis":"y","frame":null},{"x":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"y":[5.5393696032794253,4.7216858759000413,5.358479345432924,5.1026728985989083,6.9091886830282485,6.2262501449133154,5.2408950858157004,4.6432472624781349,4.7819615176968764,4.5860670281200075,4.2807960557054709,5.1717852857170055,4.600686912736049,5.2473232247175723,4.570813778505677,4.4204419727603526,4.1616834766890083,3.8311623966914055,3.8253494818302967,3.75080636053133,6.7737927280593295,7.979338750897873,8.0033397521048464,9.1227829979962998,6.8737543236538423,7.9442186863021789,7.6988742431009687,9.0570702573489328,6.799804841523998,6.6676387072508874,6.3307455671662138,5.7173331983532467,5.9572062247719382,7.0605378152521787,7.649855140319529,8.5360008567864689,6.8219041663998103,6.4183821176148701,7.1726501860444474,12.261403919214544],"text":["21/1100","21/1101","21/1102","21/1103","21/1104","21/1105","21/1106","21/1107","21/1108","21/1109","21/1110","21/1111","21/1112","21/1113","21/1114","21/1115","21/1116","21/1117","21/1118","21/1119","21/1120","21/1121","21/1122","21/1123","21/1124","21/1125","21/1126","21/1127","21/1128","21/1129","21/1130","21/1131","21/1132","21/1133","21/1134","21/1135","21/1136","21/1137","21/1138","21/1139"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":0.5,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.228310502283104,"r":7.3059360730593621,"b":30.41575444219993,"l":38.588625985886267},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,1.6000000000000001],"tickmode":"array","ticktext":["LABNr"],"tickvals":[1],"categoryorder":"array","categoryarray":["LABNr"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[3.3246424030514965,12.688004041413123],"tickmode":"array","ticktext":["4","5","6","7","8","9","10","11","12"],"tickvals":[4,5,6,7,8,9,9.9999999999999982,11,12],"categoryorder":"array","categoryarray":["4","5","6","7","8","9","10","11","12"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Microbial C/N ratio","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"db853d63e34":{"x":{},"y":{},"text":{},"type":"box"},"db84d994dc":{"x":{},"y":{},"text":{}}},"cur_data":"db853d63e34","visdat":{"db853d63e34":["function (y) ","x"],"db84d994dc":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+</section>
+<section id="write-final-data-into-an-excel-file" class="level2">
+<h2 class="anchored" data-anchor-id="write-final-data-into-an-excel-file">Write final data into an excel file</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(results_table,<span class="st">"Your_final_microbial_data.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

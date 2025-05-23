@@ -1,7 +1,6 @@
 <!-- _layouts/base.html -->
 <!DOCTYPE html>
 <html lang="de" class="darkmode">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,21 +24,39 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
 
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Quarto – farmse988" />
+    <meta property="og:description" content="Farmse988 bietet datengetriebene Lösungen für die Landwirtschaft in Österreich." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://farmse988.github.io/" />
+    <meta property="og:image" content="https://farmse988.github.io/images/social-preview.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Quarto – farmse988" />
+    <meta name="twitter:description" content="Farmse988 bietet datengetriebene Lösungen für die Landwirtschaft in Österreich." />
+    <meta name="twitter:image" content="https://farmse988.github.io/images/social-preview.jpg" />
+
+    <link rel="icon" href="/images/logo.svg" type="image/svg+xml" />
+
+
+
     <!--global  -->
     <link rel="stylesheet" href="/assets/css/global.css" />
     <link rel="stylesheet" href="/assets/css/header.css" />
     <link rel="stylesheet" href="/assets/css/footer.css" />
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link
+      rel="stylesheet"
+      href="/assets/css/styles.css"
+    />
     <link rel="stylesheet" href="/assets/css/style_index.css" />
     <link rel="stylesheet" href="/assets/css/style_about.css" />
     <link rel="stylesheet" href="/assets/css/style_contact.css" />
     <link rel="stylesheet" href="/assets/css/style_publications.css" />
     <link rel="stylesheet" href="/assets/css/style_repositories.css" />
     <link rel="stylesheet" href="/assets/css/style_services.css" />
-    <link rel="stylesheet" href="/assets/css/style_services.css" />
     <link rel="stylesheet" href="/assets/css/style_legal.css" />
     <link rel="stylesheet" href="/assets/css/style_quarto.css" />
-    
   </head>
 
   <body>
@@ -96,7 +113,7 @@
       <h2>Bodenanalyse Mikrobielle Biomasse</h2>
       <div class="card-links">
         <a href="https://farmse988.github.io/Microbial_biomass_C_N/microbial_biomass_c_n.html" target="_blank">🌐 Quarto-Seite</a>
-        <a href="" target="_blank">📁 GitHub Repo</a>
+        <a href="https://github.com/farmse988/farmse988.github.io/tree/main/Microbial_biomass_C_N" target="_blank">📁 GitHub Repo</a>
       </div>
     </div>
 
@@ -126,12 +143,10 @@
     </footer>
 
     <script>
-      
       document.addEventListener("DOMContentLoaded", () => {
         const htmlEl = document.documentElement;
         const themeSwitch = document.getElementById("theme-switch");
         const currentMode = localStorage.getItem("darkmode");
-
 
         const enableDark = () => {
           htmlEl.classList.add("darkmode");
@@ -144,10 +159,10 @@
         };
 
         if (currentMode === "active" || currentMode === null) {
-  enableDark();
-} else {
-  disableDark();
-}
+          enableDark();
+        } else {
+          disableDark();
+        }
 
         themeSwitch.addEventListener("click", () => {
           htmlEl.classList.contains("darkmode") ? disableDark() : enableDark();
@@ -155,11 +170,11 @@
       });
 
       document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector(".burger").addEventListener("click", () => {
-    document.querySelector(".burger").classList.toggle("active");
-    document.querySelector(".nav-links").classList.toggle("open");
-  });
-});
+        document.querySelector(".burger").addEventListener("click", () => {
+          document.querySelector(".burger").classList.toggle("active");
+          document.querySelector(".nav-links").classList.toggle("open");
+        });
+      });
     </script>
   </body>
 </html>
